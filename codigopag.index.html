@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Daniel | Cargas y Retiros 24/7</title>
+    <!-- Fuente moderna e intuitiva de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #2a081a 0%, #170428 50%, #0d021a 100%);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(236, 72, 153, 0.2);
+            --primary-red: #f43f5e;
+            --primary-purple: #a855f7;
+            --btn-gradient: linear-gradient(90deg, #e11d48 0%, #9333ea 100%);
+            --btn-hover: linear-gradient(90deg, #f43f5e 0%, #a855f7 100%);
+            --text-main: #ffffff;
+            --text-muted: #e2e8f0;
+            --whatsapp-color: #22c55e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Animación suave de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Espacio para el Logotipo */
+        .logo-container {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-purple);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+            background-color: var(--card-bg);
+        }
+
+        /* Encabezado */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fb7185, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(244, 63, 94, 0.15);
+            color: #fda4af;
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        /* Botón Principal (WhatsApp) */
+        .btn-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--btn-gradient);
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 1.2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-main:hover {
+            background: var(--btn-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(168, 85, 247, 0.5);
+        }
+
+        /* Sección de Redes Sociales */
+        .social-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.9rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: var(--primary-purple);
+        }
+
+        /* Tarjeta Informativa */
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            color: #f43f5e;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .btn-main { font-size: 1rem; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Reemplaza "logo.png" por el enlace o nombre de tu imagen de logotipo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Logotipo Cajero Daniel" class="logo-img" onerror="this.src='https://via.placeholder.com/120/2a081a/a855f7?text=CD'">
+        </div>
+
+        <h1>Cajero Daniel</h1>
+        <div class="badge">⚡ Servicio Activo 24/7</div>
+
+        <p class="description">
+            Cargas y retiros inmediatos con la mayor seguridad y confianza. ¡Contactame directo para gestionar tu ficha!
+        </p>
+
+        <!-- Botón Principal WhatsApp -->
+        <a href="#" id="wa-link" class="btn-main" target="_blank">
+            💬 Cargar Fichas por WhatsApp
+        </a>
+
+        <!-- Redes Sociales -->
+        <div class="social-title">Mis Redes Oficiales</div>
+        <div class="social-grid">
+            <a href="https://www.instagram.com/mendoccc4?igsh=cHcwMml5d3U3ZHA3" class="social-btn" target="_blank">
+                📷 Instagram
+            </a>
+            <a href="https://www.tiktok.com/@mendoccc4?_r=1&_t=ZS-990yjKWqts5" class="social-btn" target="_blank">
+                🎵 TikTok
+            </a>
+            <a href="https://www.facebook.com/share/1EUCnWxBAA/" class="social-btn" target="_blank">
+                📘 Facebook
+            </a>
+        </div>
+
+        <!-- Tarjeta Informativa -->
+        <div class="info-card">
+            <h3>Atención Personalizada</h3>
+            <p>Aceptamos transferencias bancarias y billeteras virtuales. Acreditación en minutos.</p>
+        </div>
+
+        <footer>
+            &copy; 2026 Cajero Daniel - Exclusivo para mayores de 18 años.
+        </footer>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN DE TU NÚMERO DE WHATSAPP
+        const NUMERO_WHATSAPP = "5491172575440"; // Pon tu número completo con código de país (sin +)
+        const MENSAJE = "Hola Cajero Daniel, quiero pedir información para cargar fichas";
+
+        // Asignar el enlace dinámico al botón de WhatsApp
+        document.getElementById('wa-link').href = `https://wa.link/7m9rg6}`;
+    </script>
+</body>
+</html>
